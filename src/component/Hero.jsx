@@ -5,7 +5,7 @@ import { useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 export const Hero = () => {
-  const videoRef = useRef(null)
+  const videoRef = useRef()
   const isMobile = useMediaQuery({ maxWidth: 767 })
   useGSAP(() => {
     const titleSplit = new SplitText('.title', { type: 'chars, words' })
@@ -44,7 +44,7 @@ export const Hero = () => {
     const startValue = isMobile ? 'top 50%' : 'center 60%'
     const endValue = isMobile ? '120% top' : 'bottom top'
 
-    const tl = gsap.timeline({
+    let tl = gsap.timeline({
       scrollTrigger: {
         trigger: 'video',
         start: startValue,
