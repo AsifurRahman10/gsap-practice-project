@@ -23,7 +23,7 @@ export const Navbar = () => {
     )
   })
   return (
-    <nav>
+    <nav className=''>
       <div>
         <a
           href='/'
@@ -34,17 +34,17 @@ export const Navbar = () => {
           />
           <p>Drinks Website</p>
         </a>
-      </div>
 
-      <ul>
-        {navLinks.map((item) => {
-          return (
-            <li key={item.id}>
-              <a href={item.id}>{item.title}</a>
-            </li>
-          )
-        })}
-      </ul>
+        <ul>
+          {navLinks.map((item) => {
+            return (
+              <li key={item.id}>
+                <a href={item.id}>{item.title}</a>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </nav>
   )
 }
